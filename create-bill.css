@@ -1,0 +1,346 @@
+/* Layout chính */
+.container-fluid {
+    display: flex;
+    min-height: calc(100vh - 56px);
+}
+
+/* Form section */
+.form-section {
+    width: 35%;
+    padding: 30px;
+    background: white;
+    border-right: 1px solid #eee;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.required {
+    color: red;
+}
+
+/* Preview section */
+.preview-section {
+    width: 65%;
+    padding: 30px;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-container {
+    width: 430px;
+}
+
+.bill-container {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background: white;
+}
+
+.bill-background {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.bill-text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Header */
+.time-text {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+}
+
+.status-icons {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+}
+
+/* Amount */
+.amount-text {
+    position: absolute;
+    top: 245px;
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #0052CC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Date */
+.date-text {
+    position: absolute;
+    top: 300px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: #57606A;
+}
+
+/* Receiver info */
+.receiver-name {
+    position: absolute;
+    top: 380px;
+    width: 100%;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 0.2px;
+}
+
+/* Form bank info */
+.form-section .bank-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    position: static; /* Reset position */
+}
+
+.form-section .bank-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Preview bill bank info */
+.bill-text-overlay .bank-info {
+    position: absolute;
+    top: 415px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+}
+
+.bank-preview {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 4px 8px;
+    background: transparent;
+    margin: 0 auto;
+}
+
+.bank-preview img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    margin-right: 4px;
+}
+
+.bank-preview span {
+    font-size: 18px;
+    color: #57606A;
+}
+
+#bankNameDisplay {
+    margin-right: 4px;
+    font-size: 18px;
+}
+
+#previewTransactionId {
+    color: #57606A;
+}
+
+.description {
+    position: absolute;
+    top: 445px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: #57606A;
+}
+
+/* Bank select styles */
+.bank-select {
+    position: relative;
+}
+
+.selected-bank {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.selected-bank img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.selected-bank span {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .form-section {
+        width: 40%;
+    }
+    .preview-section {
+        width: 60%;
+    }
+}
+
+@media (max-width: 992px) {
+    .container-fluid {
+        flex-direction: column;
+    }
+
+    .form-section {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .preview-section {
+        width: 100%;
+    }
+
+    .preview-container {
+        width: 100%;
+        max-width: 480px;
+        margin: 20px auto;
+    }
+}
+
+/* Style cho input */
+.form-control {
+    transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: #1555b6;
+    box-shadow: 0 0 0 0.2rem rgba(21, 85, 182, 0.25);
+}
+
+#bankName option {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    top: 400px;
+}
+
+#bankName option::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.bank-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.bank-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.transaction-box {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    width: 85%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.bank-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 6px;
+}
+
+.bank-info img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+.bank-info span {
+    font-size: 18px;
+    color: #57606A;
+}
+
+.transaction-id {
+    font-size: 18px;
+    color: #57606A;
+    text-align: center;
+}
+
+#bankNameDisplay {
+    font-size: 14px;
+}
+
+.transaction-info {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.bank-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.bank-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+#bankNameDisplay {
+    font-size: 14px;
+    color: #333;
+}
